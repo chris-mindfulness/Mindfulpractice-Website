@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Courses",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "title",
+      "startDate",
+      "endDate",
+      "schedule",
+      "location",
+      "maxSeats",
+      "freeSeats"
+    ],
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "startDate": {
+        "type": "string",
+        "format": "date",
+        "description": "Startdatum im ISO-Format YYYY-MM-DD"
+      },
+      "endDate": {
+        "type": "string",
+        "format": "date",
+        "description": "Enddatum im ISO-Format YYYY-MM-DD"
+      },
+      "schedule": {
+        "type": "string",
+        "description": "Terminangabe, z. B. Wochentag und Uhrzeit"
+      },
+      "location": {
+        "type": "string"
+      },
+      "locationName": {
+        "type": "string"
+      },
+      "locationUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "maxSeats": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "freeSeats": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  }
+}

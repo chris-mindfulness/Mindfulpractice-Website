@@ -1,0 +1,19 @@
+GitHub: Aenderungen hochladen (einfach)
+
+1) Im Terminal in den Projektordner:
+   cd /Users/ch70bure/Privat/mbsr-astro
+
+2) Status ansehen:
+   git status
+
+3) Alle Aenderungen hinzufuegen:
+   git add .
+
+4) Commit erstellen:
+   git commit -m "Update Inhalte"
+
+5) Hochladen:
+   git push
+
+Tipp:
+- Wenn git fragt, ob du eine Nachricht eingeben willst: einfach speichern.

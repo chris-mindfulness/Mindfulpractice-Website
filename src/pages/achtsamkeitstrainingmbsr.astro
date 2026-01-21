@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+
+const description = "Mindfulness Based Stress Reduction (MBSR).";
+---
+
+<BaseLayout
+  title="Mindfulness Based Stress Reduction (MBSR)"
+  description={description}
+  bodyClass="theme--mbsr"
+>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">MBSR</span>
+      <h1>Mindfulness Based Stress Reduction (dt. Achtsamkeitsbasierte Stressreduktion)</h1>
+      <p>Ein 8-Wochen-Programm zur Stressbewältigung.</p>
+    </div>
+  </header>
+
+  <Section title="Über den Kurs">
+    <div class="highlight-panel">
+      <p>
+        MBSR ist ein wissenschaftlich fundiertes Trainingsprogramm, das von
+        Krankenkassen bezuschusst und im Gesundheitssystem empfohlen wird.
+      </p>
+      <p>
+        Der Kurs erstreckt sich über acht Wochen und basiert auf regelmäßiger Übung
+        sowie erfahrungsorientierten Inhalten.
+      </p>
+    </div>
+  </Section>
+
+  <Section
+    title="Kosten & Zuschuss"
+    className="section--blob-left section--icon section--icon-costs"
+  >
+    <div class="card-grid">
+      <Card title="Kosten" className="card--compact">
+        <p>
+          Der Kurs kostet 395 € und beinhaltet ein Kursbuch, einen Notizblock sowie
+          Audiodateien zur formellen Praxis zu Hause und unterwegs. Zukünftig werden die Unterlagen auch über eine kursbegleitende und kostenlose App zugänglich sein.
+        </p>
+      </Card>
+      <Card title="Zuschuss der Krankenkasse">
+        <p>
+          MBSR wird von den gesetzlichen Krankenkassen als Methode der Stressprävention
+          anerkannt. Bitte informieren Sie sich selbstständig über die Bedingungen Ihrer
+          Krankenkasse. Am Ende des Kurses erhalten Sie eine Teilnahmebestätigung.
+        </p>
+        <p>
+          Versicherte der AOK Plus können über das Gutscheinprogramm kostenfrei teilnehmen.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section title="Ablauf & Organisation" className="section--icon section--icon-structure">
+    <div class="card-grid">
+      <Card title="Übungen für zu Hause">
+        <p>
+          Neben den wöchentlichen Treffen sind möglichst tägliche Übungen vorgesehen
+          (ca. 30 Minuten). Audiodateien und Arbeitsblätter unterstützen die Praxis.
+          Die regelmäßige Übung ist zentral für den Kurs und den Austausch.
+        </p>
+        <p>Die Kursunterlagen erhalten die Teilnehmenden über eine Kurs-App.</p>
+      </Card>
+      <Card title="Vorgespräch">
+        <p>
+          Vor der Anmeldung ist ein unverbindliches Vorgespräch (10–20 Minuten)
+          vorgesehen. Dort werden Fragen zu Inhalten und Struktur geklärt. Das Gespräch
+          kann per Zoom stattfinden.
+        </p>
+      </Card>
+    </div>
+    <div class="info-panel">
+      <span class="badge">Kursort</span>
+      <p>
+        <a
+          class="info-link"
+          href="https://belight-leipzig.de"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Be Light Yogastudio
+        </a>
+        <br />
+        Nikolaistraße 33-37 · 04109 Leipzig
+      </p>
+    </div>
+  </Section>
+
+  <Section title="Kursinhalte & Kernthemen" className="section--icon section--icon-content">
+    <div class="card-grid">
+      <Card title="Kursinhalte">
+        <ul class="list--icons">
+          <li>Aufmerksamkeit und Selbstregulation üben.</li>
+          <li>Ursachen für Hindernisse im Fühlen, Denken und Handeln erkennen.</li>
+          <li>
+            Stressauslöser und automatische Reaktionen erkennen und Alternativen entwickeln.
+          </li>
+          <li>Konstruktiver mit schwierigen Gefühlen umgehen.</li>
+          <li>Umgang mit belastenden Situationen reflektieren.</li>
+          <li>Eigene Ressourcen identifizieren und nutzen.</li>
+        </ul>
+      </Card>
+      <Card title="Kernthemen">
+        <ul class="list--icons">
+          <li>Was steckt genau hinter Meditation und Achtsamkeit?</li>
+          <li>Welche Übungen gibt es?</li>
+          <li>Wie lassen sich Übungen dauerhaft in den Alltag integrieren?</li>
+          <li>Welche Ursachen und Auswirkungen hat Stress auf Körper und Geist?</li>
+          <li>Warum können formelle Meditationsübungen das Verhalten verändern?</li>
+          <li>Wie lassen sich Haltung und Umgangsweisen im Alltag reflektieren?</li>
+          <li>Wie kann ein achtsamer Umgang mit sich und der Umwelt aussehen?</li>
+        </ul>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Wirkungsbereiche & Wissenschaftliche Quellen"
+    className="section--icon section--icon-effects"
+  >
+    <div class="card-grid">
+      <Card className="card--wide">
+        <ul class="feature-list feature-list--dense">
+          <li>
+            Verbesserung der Kognition (u. a. kreatives Problemlösen; z. B.{" "}
+            <a
+              href="https://www.annualreviews.org/doi/10.1146/annurev-psych-042716-051139"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Creswell, 2017
+            </a>
+            ; v. a. Arbeitsgedächtnis, s.{" "}
+            <a
+              href="https://link.springer.com/article/10.1007/s11065-021-09519-y"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Whitefield et al., 2022
+            </a>
+            )
+          </li>
+          <li>
+            Verbesserung der Emotionsregulation (z. B.{" "}
+            <a
+              href="https://www.annualreviews.org/doi/10.1146/annurev-psych-042716-051139"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Creswell, 2017
+            </a>
+            )
+          </li>
+          <li>
+            Verbesserung der körperlichen Gesundheit (z. B.{" "}
+            <a
+              href="https://www.annualreviews.org/doi/10.1146/annurev-psych-042716-051139"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Creswell, 2017
+            </a>
+            )
+          </li>
+          <li>
+            Reduktion von Stress und verschiedenen psychologischen Symptomen wie
+            depressiven Symptomen und Ängstlichkeit (z. B.{" "}
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/33593124/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Goldberg et al., 2022
+            </a>
+            )
+          </li>
+          <li>
+            Erhöhung von Empathie, Mitgefühl und prosozialem Verhalten (z. B.{" "}
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/30100929/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Luberto et al., 2018
+            </a>
+            )
+          </li>
+        </ul>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    id="ablauf"
+    title="Ablauf bis zum Kursstart"
+    intro="So läuft der nächste Schritt ab."
+    className="section--icon section--icon-steps"
+  >
+    <ul class="timeline timeline--icons">
+      <li>
+        <strong>1) Kontakt per E-Mail</strong> – bitte senden Sie gleich drei
+        Terminvorschläge für ein Vorgespräch an{" "}
+        <a href="mailto:achtsamkeit@belight-leipzig.de">achtsamkeit@belight-leipzig.de</a>.
+      </li>
+      <li>
+        <strong>2) Terminbestätigung</strong> – ich wähle einen Termin aus und sende den
+        passenden Link. Falls es nicht passt, suchen wir gemeinsam eine Alternative.
+      </li>
+      <li>
+        <strong>3) Vorgespräch</strong> – kein Auswahlgespräch, sondern ein Termin, um
+        ein Gefühl für den Kurs zu bekommen und die Intention der Teilnehmenden
+        einzuordnen.
+      </li>
+      <li>
+        <strong>4) Anmeldebogen</strong> – ich sende den Bogen zu; ausgefüllt und
+        unterzeichnet bitte per Scan zurück.
+      </li>
+      <li>
+        <strong>5) Informationsmail</strong> – eine Woche vor Kursstart erhalten alle
+        Teilnehmenden eine Mail mit allen Infos zum Start.
+      </li>
+    </ul>
+  </Section>
+</BaseLayout>

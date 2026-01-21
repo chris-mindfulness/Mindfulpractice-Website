@@ -1,0 +1,11 @@
+---
+import CourseCard from "./CourseCard.astro";
+
+const { courses = [] } = Astro.props;
+---
+
+<div class="course-grid">
+  {courses.map((course) => (
+    <CourseCard course={course} />
+  ))}
+</div>

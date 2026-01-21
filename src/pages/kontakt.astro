@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description = "Kontakt und Erreichbarkeit.";
+---
+
+<BaseLayout title="Kontakt" description={description} bodyClass="theme--kontakt">
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Kontakt</span>
+      <h1>Kontakt</h1>
+      <p>Für Anfragen erreichen Sie mich per E-Mail oder Telefon.</p>
+    </div>
+  </header>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="card-grid">
+        <article class="card card--compact">
+          <h3>E-Mail</h3>
+          <p>
+            <a href="mailto:achtsamkeit@belight-leipzig.de">achtsamkeit@belight-leipzig.de</a>
+          </p>
+        </article>
+        <article class="card card--compact">
+          <h3>Telefon</h3>
+          <p>
+            <a href="tel:+4917680425538">+49 (0) 176 804 255 38</a>
+          </p>
+        </article>
+        <article class="card card--compact">
+          <h3>Adresse</h3>
+          <address class="contact-address">Nikolaistraße 33-37 · 04109 Leipzig</address>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Standort</h2>
+        <p class="section-intro">Be Light Yoga Studio · Nikolaistraße 33-37 · 04109 Leipzig</p>
+      </header>
+      <div class="map-embed">
+        <iframe
+          title="Google Maps: Be Light Yoga Studio Leipzig"
+          src="https://www.google.com/maps?q=Be%20Light%20Yoga%20Studio%20Leipzig&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

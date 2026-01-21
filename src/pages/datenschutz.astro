@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description = "Datenschutzerklärung";
+---
+
+<BaseLayout title="Datenschutz" description={description}>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Rechtliches</span>
+      <h1>Datenschutz</h1>
+      <p>
+        Diese Datenschutzerklärung informiert über die Verarbeitung personenbezogener
+        Daten auf dieser Website.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <article class="card">
+        <h2>Allgemeine Hinweise</h2>
+        <p>
+          Beim Besuch dieser Website werden keine Cookies gesetzt und keine Tracking-
+          Dienste eingesetzt. Server-Logfiles werden nur zur Sicherstellung des Betriebs
+          gespeichert.
+        </p>
+        <h2>Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der
+          Anfrage verwendet. Es erfolgt keine Weitergabe an Dritte.
+        </p>
+        <h2>Ihre Rechte</h2>
+        <p>
+          Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Bitte
+          wenden Sie sich dafür an die im Impressum genannten Kontaktdaten.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

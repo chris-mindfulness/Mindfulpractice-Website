@@ -1,0 +1,12 @@
+---
+const { title, meta, text, as = "article", href, className = "" } = Astro.props;
+const Tag = as;
+const classes = ["card", className].filter(Boolean).join(" ");
+---
+
+<Tag class={classes} {...(href ? { href } : {})}>
+  {title && <h3>{title}</h3>}
+  {meta && <p class="footer-note">{meta}</p>}
+  {text && <p>{text}</p>}
+  <slot />
+</Tag>

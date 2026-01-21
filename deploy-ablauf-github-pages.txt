@@ -1,0 +1,28 @@
+Deploy-Ablauf (GitHub Pages + eigene Domain)
+
+1) GitHub-Repo anlegen (öffentlich oder privat).
+2) Projekt pushen:
+   - git init (falls nötig)
+   - git add .
+   - git commit -m "Initial"
+   - git remote add origin <REPO-URL>
+   - git push -u origin main
+3) Astro konfigurieren:
+   - in astro.config.mjs: site: "https://mindfulpractice.de"
+4) Domain hinterlegen:
+   - Datei public/CNAME mit Inhalt: mindfulpractice.de
+5) GitHub Pages aktivieren:
+   - Repo → Settings → Pages → Build: GitHub Actions
+6) Deploy-Workflow (Astro) einrichten:
+   - .github/workflows/deploy.yml (auf Astro Pages zugeschnitten)
+7) DNS bei checkdomain:
+   - A-Records für die Root-Domain:
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+   - Optional: www als CNAME → <dein-github-username>.github.io
+8) SSL aktivieren:
+   - Repo → Settings → Pages → Custom domain + "Enforce HTTPS"
+9) Warten & testen:
+   - DNS kann 1–24h brauchen

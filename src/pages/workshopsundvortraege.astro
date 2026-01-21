@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+
+const description = "Workshops und Vorträge zu Achtsamkeit, Resilienz und Stressprävention.";
+---
+
+<BaseLayout
+  title="Workshops und Vorträge"
+  description={description}
+  bodyClass="theme--workshops"
+>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Impulse</span>
+      <h1>Workshops & Vorträge</h1>
+      <p>Formate für Unternehmen, Bildungseinrichtungen und Teams.</p>
+    </div>
+  </header>
+
+  <Section title="Formate" intro="Dauer und Aufbau werden passend zur Zielgruppe abgestimmt.">
+    <div class="card-grid">
+      <Card title="Workshops (3–5 Stunden)">
+        <p>
+          Fundiertes Hintergrundwissen kombiniert mit praktischen Übungen für Alltag,
+          Arbeitsplatz und zu Hause.
+        </p>
+      </Card>
+      <Card title="Vorträge (60–90 Minuten)">
+        <p>
+          Kompakte Einführung in zentrale Konzepte mit Beispielen aus Praxis und
+          Forschung.
+        </p>
+      </Card>
+    </div>
+    <p class="section-note">Inhalte werden auf Zielgruppe, Branche und Kontext zugeschnitten.</p>
+  </Section>
+
+  <Section title="Themen" intro="Schwerpunkte nach Absprache.">
+    <div class="chip-group">
+      <span class="chip">Resilienz</span>
+      <span class="chip">Stressprävention</span>
+      <span class="chip">Achtsamkeitsbasierte Verfahren</span>
+      <span class="chip">Achtsamkeit im Arbeitsalltag</span>
+      <span class="chip">Achtsamkeit in Bildungskontexten</span>
+      <span class="chip">Aufmerksamkeit & Konzentration</span>
+      <span class="chip">Selbstregulation</span>
+      <span class="chip">Individuell anpassbar</span>
+    </div>
+    <p class="section-note">
+      Transfer in den Alltag: kurze Übungen für zu Hause und den Arbeitsplatz.
+    </p>
+  </Section>
+
+  <Section className="section--cta">
+    <div class="cta-banner">
+      <div>
+        <h3>Individuelle Anfrage</h3>
+        <p>Inhalte, Dauer und Zielgruppe werden gemeinsam abgestimmt.</p>
+      </div>
+      <a class="button" href="/kontakt">Anfrage senden</a>
+    </div>
+  </Section>
+</BaseLayout>

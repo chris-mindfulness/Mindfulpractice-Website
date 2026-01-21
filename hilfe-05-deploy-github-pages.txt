@@ -1,0 +1,17 @@
+Deploy auf GitHub Pages (kurz)
+
+Voraussetzungen:
+- Repo liegt auf GitHub
+- Workflow vorhanden: .github/workflows/deploy.yml
+- Datei public/CNAME enthaelt mindfulpractice.de
+- In astro.config.mjs steht site: "https://mindfulpractice.de"
+
+Schritte:
+1) Aenderungen pushen (siehe hilfe-04-github-push.txt)
+2) GitHub -> Settings -> Pages
+3) Build and deployment: GitHub Actions
+4) Warten, bis der Workflow fertig ist
+5) Website testen
+
+Hinweis:
+- Die erste Auslieferung kann ein paar Minuten dauern.

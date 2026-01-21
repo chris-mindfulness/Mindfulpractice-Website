@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description = "Be Light Yoga Studio in Leipzig.";
+---
+
+<BaseLayout title="Be Light Yoga Studio" description={description} bodyClass="theme--yoga">
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Be Light</span>
+      <h1>Be Light Dein Yogastudio in Leipzig</h1>
+      <p>
+        Folge uns auf Instagram, um keine Events zu verpassen.
+      </p>
+      <p>Kursbuchungen sind über Eversports möglich.</p>
+      <div class="hero-actions">
+        <a
+          class="button"
+          href="https://www.belight-leipzig.de/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Studio-Website
+        </a>
+      </div>
+      <div class="social-card">
+        <div>
+          <span class="badge">Instagram</span>
+          <h3>@belightleipzig</h3>
+          <p>Aktuelle Eindrücke und Ankündigungen aus dem Studio.</p>
+        </div>
+        <a
+          class="button button--outline"
+          href="https://www.instagram.com/belightleipzig/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Profil öffnen
+        </a>
+      </div>
+    </div>
+  </header>
+</BaseLayout>

@@ -1,0 +1,17 @@
+Domain bei checkdomain (DNS)
+
+Ziel:
+- mindfulpractice.de zeigt auf GitHub Pages
+
+Eintraege (A-Records fuer die Root-Domain):
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+Optional:
+- www als CNAME -> <dein-github-username>.github.io
+
+Wichtig:
+- DNS braucht Zeit (1 bis 24 Stunden)
+- Danach in GitHub Pages "Enforce HTTPS" aktivieren

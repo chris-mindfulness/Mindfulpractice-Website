@@ -1,0 +1,22 @@
+Ueberblick (in einfachen Worten)
+
+Was ist das hier?
+- Eine statische Website mit Astro.
+- Inhalte stehen in Dateien im Ordner src/.
+- Bilder/Assets (falls vorhanden) kommen in public/.
+
+Wichtige Ordner:
+- src/pages/  -> alle Seiten (z.B. index.astro, kontakt.astro)
+- src/data/ -> Inhalte als JSON (z.B. courses.json)
+- src/styles/  -> globales Design (global.css)
+
+Was muss ich im Alltag tun?
+- Inhalte aendern (Text, Termine, Kurse)
+- Website lokal ansehen
+- Aenderungen bei GitHub hochladen
+
+Wenn du nur Texte aendern willst:
+- Datei oeffnen, Text ersetzen, speichern.
+
+Wenn du unsicher bist:
+- Siehe die anderen Hilfe-Dateien in diesem Ordner.

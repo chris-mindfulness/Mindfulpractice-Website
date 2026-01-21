@@ -1,0 +1,266 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import courses from "../data/courses.json";
+import offers from "../data/offers.json";
+import testimonials from "../data/testimonials.json";
+
+const description = "Mindful Practice · Achtsamkeitstraining in Leipzig.";
+const offerTeasers = offers.slice(0, 2);
+const nextCourse = courses[0];
+const courseCount = 25;
+const avgParticipants = 11;
+const totalParticipants = courseCount * avgParticipants;
+const roundedParticipants = Math.floor(totalParticipants / 50) * 50;
+const participantsLabel = `${roundedParticipants}+`;
+
+const formatter = new Intl.DateTimeFormat("de-DE", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric"
+});
+const start = nextCourse ? new Date(nextCourse.startDate) : null;
+const end = nextCourse ? new Date(nextCourse.endDate) : null;
+const sameDay = start && end ? start.toDateString() === end.toDateString() : false;
+const dateRange =
+  start && end
+    ? sameDay
+      ? formatter.format(start)
+      : `${formatter.format(start)} – ${formatter.format(end)}`
+    : "";
+const maxSeats = typeof nextCourse?.maxSeats === "number" ? nextCourse.maxSeats : null;
+const freeSeats = typeof nextCourse?.freeSeats === "number" ? nextCourse.freeSeats : null;
+const seatLabel =
+  maxSeats && freeSeats !== null
+    ? `${freeSeats} von ${maxSeats} Plätzen frei`
+    : "Plätze verfügbar";
+const seatSlots =
+  maxSeats && freeSeats !== null
+    ? Array.from({ length: maxSeats }, (_, index) => index < freeSeats)
+    : [];
+---
+
+<BaseLayout title="Mindful Practice · Anfängergeist" description={description}>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Mindful Practice</span>
+      <h1>Mindful Practice | Anfängergeist</h1>
+      <p>Ein Angebot auf dem Weg zu mehr innerer Ruhe in Alltag und Beruf.</p>
+      <div class="chip-group">
+        <span class="chip">Achtsamkeitstraining (MBSR)</span>
+        <span class="chip">Einzelberatung</span>
+        <span class="chip">Workshops & Vorträge</span>
+        <span class="chip">(Acro)Yoga & mehr</span>
+      </div>
+      <div class="cta-group">
+        <a class="button" href="/achtsamkeitstrainingmbsr">Mehr über MBSR</a>
+        <a class="button button--outline" href="/kontakt">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <Section
+    title="Aufmerksamkeit als Kern"
+    intro="Ein Leitgedanke, der die Praxis zusammenfasst."
+    eyebrow="Zitat"
+    className="section--compact"
+  >
+    <figure class="quote-block">
+      <blockquote>
+        „Das Vermögen, eine wandernde Aufmerksamkeit willentlich zurückzubringen,
+        wieder und immer wieder, ist die eigentliche Wurzel von Urteilskraft,
+        Charakter und Wille. Niemand ist bei klarem Verstand, der dieses Vermögen
+        nicht besitzt. Eine Erziehung, die dieses Vermögen ausbildet, wäre die
+        Erziehung par excellence.“
+      </blockquote>
+      <figcaption>William James · Die Prinzipien der Psychologie (1890)</figcaption>
+    </figure>
+  </Section>
+
+  <Section
+    title="Anstehende MBSR Kurse"
+    intro="Aktuelle Kursformate und Termine."
+    className="section--blob-right"
+    eyebrow="MBSR"
+  >
+    <div class="course-journey">
+      {nextCourse && (
+        <div class="course-summary">
+          <span class="badge course-badge">Nächster Kurs</span>
+          <h3>{nextCourse.title}</h3>
+          <div class="course-meta-row">
+            <dl class="course-meta">
+              <div>
+                <dt>Zeitraum</dt>
+                <dd>{dateRange}</dd>
+              </div>
+              <div>
+                <dt>Termin</dt>
+                <dd>{nextCourse.schedule}</dd>
+              </div>
+              <div>
+                <dt>Ort</dt>
+                <dd>
+                  {nextCourse.locationName && nextCourse.locationUrl ? (
+                    <>
+                      <a
+                        href={nextCourse.locationUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        {nextCourse.locationName}
+                      </a>
+                      <br />
+                    </>
+                  ) : null}
+                  {nextCourse.location}
+                </dd>
+              </div>
+              <div>
+                <dt>Unterlagen</dt>
+                <dd>Die Kursunterlagen stehen über eine Kurs-App zur Verfügung.</dd>
+              </div>
+            </dl>
+            {maxSeats && freeSeats !== null && (
+              <div class="seat-status">
+                <div class="seat-label">
+                  <span>{seatLabel}</span>
+                </div>
+                <div class="seat-dots" role="img" aria-label={seatLabel}>
+                  {seatSlots.map((isFree) => (
+                    <span
+                      class={`seat-dot${isFree ? " seat-dot--free" : ""}`}
+                      aria-hidden="true"
+                    ></span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <div class="info-chip-group">
+            <span class="info-chip">ZPP-anerkannt</span>
+            <span class="info-chip">Zuschuss möglich</span>
+          </div>
+        </div>
+      )}
+      <ol class="journey-stepper">
+        <li>
+          <span class="journey-week">Termin 1</span>
+          <span class="journey-title">14.04.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 2</span>
+          <span class="journey-title">21.04.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 3</span>
+          <span class="journey-title">28.04.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 4</span>
+          <span class="journey-title">05.05.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 5</span>
+          <span class="journey-title">12.05.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 6</span>
+          <span class="journey-title">19.05.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 7</span>
+          <span class="journey-title">26.05.2026</span>
+        </li>
+        <li>
+          <span class="journey-week">Termin 8</span>
+          <span class="journey-title">02.06.2026</span>
+        </li>
+      </ol>
+      <div class="mini-flow">
+        <p class="section-note">Anmeldung in 5 Schritten</p>
+        <ul class="mini-list mini-list--arrows">
+          <li>Kontakt</li>
+          <li>Termin</li>
+          <li>Vorgespräch</li>
+          <li>Anmeldebogen</li>
+          <li>Info-Mail</li>
+        </ul>
+        <a class="mini-link" href="/achtsamkeitstrainingmbsr#ablauf">
+          Details ansehen
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <Section className="section--cta">
+    <div class="cta-banner">
+      <div>
+        <h3>Mehr über MBSR erfahren</h3>
+        <p>Programmablauf, Inhalte und organisatorische Details auf einen Blick.</p>
+      </div>
+      <a class="button" href="/achtsamkeitstrainingmbsr">Mehr über MBSR</a>
+    </div>
+  </Section>
+
+  <Section
+    title="Regelmäßige Übung für nachhaltige Veränderung"
+    intro="Wissenschaft, keine Meinung."
+    eyebrow="Hintergrund"
+  >
+    <div class="highlight-panel">
+      <p>
+        Veränderung entsteht durch Wiederholung und Struktur. Der Kurs arbeitet mit
+        festen Übungszeiten und klaren Wochenthemen.
+      </p>
+      <p>
+        Die Inhalte werden schrittweise eingeführt und im Alltag erprobt.
+        Beobachtungen und Fragen haben Raum.
+      </p>
+    </div>
+  </Section>
+
+  <Section title="Zahlen & Erfahrung" className="section--stats" eyebrow="Profil">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value">seit 2018</span>
+        <span class="stat-label">Kursleitung</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">{courseCount}</span>
+        <span class="stat-label">MBSR-Kurse</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">{participantsLabel}</span>
+        <span class="stat-label">Teilnehmende gesamt</span>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="Stimmen zum MBSR Kurs"
+    className="section--blob-left section--icon-cards"
+    eyebrow="Feedback"
+  >
+    <div class="card-grid">
+      {testimonials.map((testimonial) => (
+        <Card title={testimonial.name} text={testimonial.text} />
+      ))}
+    </div>
+  </Section>
+
+  <Section
+    title="Weitere Angebote"
+    intro="Weitere Angebote im Überblick."
+    className="section--icon-cards"
+    eyebrow="Angebote"
+  >
+    <div class="card-grid">
+      {offerTeasers.map((offer) => (
+        <Card as="a" href={offer.href} title={offer.title} text={offer.description} />
+      ))}
+    </div>
+  </Section>
+
+</BaseLayout>

@@ -1,0 +1,22 @@
+Inhalte pflegen (Texte und Daten)
+
+Seiten (reine Texte):
+- src/pages/index.astro
+- src/pages/achtsamkeitstrainingmbsr.astro
+- src/pages/workshopsundvortraege.astro
+- src/pages/kontakt.astro
+- src/pages/chris.astro
+
+Kurse und Daten:
+- src/data/courses.json  (z.B. Termine, Orte, freie Plaetze)
+- src/data/offers.json   (weitere Angebote)
+- src/data/testimonials.json (Stimmen)
+
+Vorgehen:
+1) Datei oeffnen
+2) Text oder Wert ersetzen
+3) Datei speichern
+4) Lokal ansehen (npm run dev)
+
+Hinweis:
+- Aendere nur die Inhalte, nicht die Struktur.

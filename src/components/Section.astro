@@ -1,0 +1,17 @@
+---
+const { title, intro, eyebrow, id, className = "" } = Astro.props;
+const classes = ["section", className].filter(Boolean).join(" ");
+---
+
+<section class={classes} id={id}>
+  <div class="container">
+    {(eyebrow || title || intro) && (
+      <header class="section-header">
+        {eyebrow && <span class="badge">{eyebrow}</span>}
+        {title && <h2>{title}</h2>}
+        {intro && <p class="section-intro">{intro}</p>}
+      </header>
+    )}
+    <slot />
+  </div>
+</section>

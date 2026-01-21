@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+
+const description = "Dr. Christian Hahn – Achtsamkeitstraining und MBSR.";
+---
+
+<BaseLayout title="Dr. Christian Hahn" description={description} bodyClass="theme--chris">
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Über mich</span>
+      <h1>Dr. Christian Hahn</h1>
+      <p>Psychologe & Meditationslehrer mit Fokus auf Stressprävention.</p>
+    </div>
+  </header>
+
+  <Section title="Kurzprofil" className="section--profile">
+    <div class="profile-grid">
+      <div class="highlight-panel">
+        <p>
+          Seit 2016 arbeite ich am Lehrstuhl für Pädagogische Psychologie mit dem
+          Schwerpunkt Lehren, Lernen und Entwicklung der Universität Leipzig.
+        </p>
+        <p>
+          Meine Leidenschaft ist es, Wissen und Perspektiven zu vermitteln, die der
+          Gesundheit und dem friedlichen Zusammenleben dienen.
+        </p>
+      </div>
+      <div class="profile-quickfacts">
+        <h3>Auf einen Blick</h3>
+        <ul>
+          <li>
+            <span class="year-badge">seit 2019</span> Trainer im Projekt Achtsamkeit in
+            der Bildung und Hoch-/Schulkultur (ABiK) am Zentrum für Lehrer*innenbildung
+            und Schulforschung der Universität Leipzig.
+          </li>
+          <li>
+            <span class="year-badge">seit 2018</span> Meditationslehrer mit Schwerpunkt
+            auf Achtsamkeit zur Stressbewältigung, Leipzig und Umgebung.
+          </li>
+          <li>
+            <span class="year-badge">seit 2016</span> Wissenschaftlicher Mitarbeiter und
+            Dozent im Bereich Lehren, Lernen und Entwicklung,{" "}
+            <a
+              href="https://home.uni-leipzig.de/paedpsy/personen/christian-hahn/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Universität Leipzig
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section title="Berufliche Tätigkeiten">
+    <ul class="timeline">
+      <li>
+        <span class="year-badge">seit 2019</span> Trainer im Projekt Achtsamkeit in der
+        Bildung und Hoch-/Schulkultur (ABiK) am Zentrum für Lehrer*innenbildung und
+        Schulforschung der Universität Leipzig.
+      </li>
+      <li>
+        <span class="year-badge">seit 2018</span> Meditationslehrer mit Schwerpunkt auf
+        Achtsamkeit zur Stressbewältigung, Leipzig und Umgebung.
+      </li>
+      <li>
+        <span class="year-badge">seit 2016</span> Wissenschaftlicher Mitarbeiter und
+        Dozent im Bereich Lehren, Lernen und Entwicklung,{" "}
+        <a
+          href="https://home.uni-leipzig.de/paedpsy/personen/christian-hahn/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Universität Leipzig
+        </a>
+        .
+      </li>
+      <li>
+        <span class="year-badge">2013–2016</span> Wissenschaftlicher Mitarbeiter und
+        Dozent im Bereich neurowissenschaftlicher Lehr- und Lernforschung, Universität
+        Göttingen.
+      </li>
+    </ul>
+  </Section>
+
+  <Section title="Fachliche Qualifikationen">
+    <div class="qualification-grid">
+      <ul class="qualification-list">
+        <li>
+          <strong>2020–2021</strong> – Zusatzqualifikation zum Experten für
+          achtsamkeitsbezogene Lehrer*innenbildung,{" "}
+          <a href="http://www.ave-institut.de" target="_blank" rel="noreferrer noopener">
+            AVE Institut
+          </a>
+          .
+        </li>
+        <li>
+          <strong>2019</strong> – Promotion (Dr. rer. nat.) im Bereich Lehr- und
+          Lernforschung.
+        </li>
+        <li>
+          <strong>2017–2018</strong> – MBSR-Lehrer, 1 1/2-jährige Ausbildung am{" "}
+          <a
+            href="https://www.institut-fuer-achtsamkeit.de/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Institut für Achtsamkeit
+          </a>
+          .
+        </li>
+      </ul>
+      <ul class="qualification-list">
+        <li>
+          <strong>2012–2013</strong> – Weiterbildung in{" "}
+          <a
+            href="https://www.maastrichtuniversity.nl/education/master/master-psychology-specialisation-neuropsychology"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Neuropsychologie
+          </a>
+          , Universität Maastricht.
+        </li>
+        <li>
+          <strong>2011–2012</strong> – Master of Science (M.Sc.),{" "}
+          <a
+            href="https://www.maastrichtuniversity.nl/education/master/master-psychology-specialisation-work-organisational-psychology"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Arbeits- & Organisationspsychologie
+          </a>
+          , Universität Maastricht.
+        </li>
+        <li>
+          <strong>2008–2011</strong> – Bachelor of Science (B.Sc.), Kognitionspsychologie,{" "}
+          <a
+            href="https://www.maastrichtuniversity.nl/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Universität Maastricht
+          </a>
+          .
+        </li>
+      </ul>
+    </div>
+  </Section>
+
+  <Section title="Zertifizierung & Verband">
+    <ul class="qualification-list">
+      <li>
+        <strong>MBSR-Zertifizierung</strong> – über den MBSR-Verband, basierend auf der
+        Ausbildung am Institut für Achtsamkeit.
+      </li>
+      <li>
+        <strong>Fachverband</strong> – Mitglied im MBSR-Verband.
+      </li>
+      <li>
+        <strong>ZPP</strong> – MBSR-Kurse sind ZPP-anerkannt und werden von den
+        Krankenkassen bezuschusst.
+      </li>
+    </ul>
+  </Section>
+</BaseLayout>

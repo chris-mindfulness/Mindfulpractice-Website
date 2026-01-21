@@ -1,0 +1,20 @@
+GitHub-Klickpfad in 3 Minuten
+
+Ziel: Pages aktivieren und Domain setzen.
+
+1) Repo oeffnen:
+   GitHub -> dein Repository
+
+2) Pages aktivieren:
+   Settings -> Pages
+   Build and deployment: GitHub Actions
+
+3) Custom Domain setzen:
+   Settings -> Pages -> Custom domain
+   mindfulpractice.de eintragen und speichern
+
+4) HTTPS aktivieren:
+   Enforce HTTPS einschalten (erst, wenn DNS greift)
+
+Fertig.
+Ab jetzt reicht: Aenderungen pushen -> Website aktualisiert sich.

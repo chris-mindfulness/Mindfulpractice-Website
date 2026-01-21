@@ -1,0 +1,19 @@
+Fehlerhilfe (haeufige Probleme)
+
+1) npm run dev geht nicht
+- Fuehre zuerst: npm install
+- Dann: npm run dev
+
+2) Seite zeigt alte Inhalte
+- Browser neu laden (Strg+R / Cmd+R)
+- Dev-Server laeuft?
+
+3) GitHub Pages zeigt nichts
+- Workflow in GitHub Actions ansehen
+- Wurde gepusht?
+- CNAME vorhanden?
+
+4) Domain zeigt nicht auf Seite
+- DNS pruefen (kann 24h dauern)
+- A-Records korrekt?
+- In GitHub Pages Custom Domain gesetzt?

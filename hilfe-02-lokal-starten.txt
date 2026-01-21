@@ -1,0 +1,16 @@
+Lokal starten (Vorschau auf deinem Rechner)
+
+1) Terminal oeffnen und in den Projektordner gehen:
+   cd /Users/ch70bure/Privat/mbsr-astro
+
+2) Einmalig Abhaengigkeiten installieren:
+   npm install
+
+3) Entwicklungsserver starten:
+   npm run dev
+
+4) Im Browser oeffnen:
+   http://localhost:4321
+
+Tipp:
+- Wenn sich etwas nicht aktualisiert, Browser neu laden.

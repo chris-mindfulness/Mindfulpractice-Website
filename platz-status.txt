@@ -1,0 +1,20 @@
+Platzstatus (MBSR Kurs)
+
+- Der Platzstatus wird dynamisch aus den Kursdaten berechnet.
+- Datenquelle: src/data/courses.json
+  - maxSeats: maximale Anzahl der Plätze
+  - freeSeats: aktuell freie Plätze
+- Anzeige/Logik: src/pages/index.astro
+  - Text: "{freeSeats} von {maxSeats} Plätzen frei"
+  - Balkenfüllung: freeSeats / maxSeats (in %)
+- Styling/Farbe des Balkens: src/styles/global.css
+  - .seat-bar (Hintergrund)
+  - .seat-bar__fill (Füllfarbe)
+
+Änderungen vornehmen:
+1) Zahl der freien Plätze anpassen:
+   src/data/courses.json -> freeSeats
+2) Maximale Plätze anpassen:
+   src/data/courses.json -> maxSeats
+3) Farbe/Optik des Balkens anpassen:
+   src/styles/global.css -> .seat-bar / .seat-bar__fill

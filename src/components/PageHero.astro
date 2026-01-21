@@ -1,0 +1,12 @@
+---
+const { eyebrow, title, lead, id = "page-title" } = Astro.props;
+---
+
+<header class="hero" aria-labelledby={id}>
+  <div class="container">
+    {eyebrow && <span class="badge">{eyebrow}</span>}
+    {title && <h1 id={id}>{title}</h1>}
+    {lead && <p>{lead}</p>}
+    <slot />
+  </div>
+</header>

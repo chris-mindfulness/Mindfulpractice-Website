@@ -1,0 +1,44 @@
+---
+const { course } = Astro.props;
+
+const formatter = new Intl.DateTimeFormat("de-DE", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric"
+});
+
+const start = new Date(course.startDate);
+const end = new Date(course.endDate);
+const sameDay = start.toDateString() === end.toDateString();
+const dateRange = sameDay
+  ? formatter.format(start)
+  : `${formatter.format(start)} – ${formatter.format(end)}`;
+---
+
+<article class="card course-card">
+  <h3>{course.title}</h3>
+  <dl class="course-meta">
+    <div>
+      <dt>Zeitraum</dt>
+      <dd>{dateRange}</dd>
+    </div>
+    <div>
+      <dt>Termin</dt>
+      <dd>{course.schedule}</dd>
+    </div>
+    <div>
+      <dt>Ort</dt>
+      <dd>
+        {course.locationName && course.locationUrl ? (
+          <>
+            <a href={course.locationUrl} target="_blank" rel="noreferrer noopener">
+              {course.locationName}
+            </a>
+            <br />
+          </>
+        ) : null}
+        {course.location}
+      </dd>
+    </div>
+  </dl>
+</article>

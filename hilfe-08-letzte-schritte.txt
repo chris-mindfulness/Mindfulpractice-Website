@@ -1,0 +1,17 @@
+Letzte Schritte vor der Veroeffentlichung (GitHub)
+
+Kurz gesagt:
+Ja, ein paar Klicks in GitHub sind noetig, aber sehr ueberschaubar.
+
+Das musst du einmalig machen:
+1) Repo erstellen (falls noch nicht passiert)
+2) Pages aktivieren:
+   GitHub -> Settings -> Pages -> Build & deployment = GitHub Actions
+3) Custom Domain setzen:
+   GitHub -> Settings -> Pages -> Custom domain -> mindfulpractice.de
+4) Enforce HTTPS aktivieren (nachdem DNS greift)
+
+Danach reicht es in Zukunft, wenn du pushst – der Rest laeuft automatisch.
+
+Wenn du willst, erstelle ich dir noch eine sehr kurze Datei
+"GitHub-Klickpfad in 3 Minuten".

@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+
+const description =
+  "Befreundete Projekte und Partner im Bereich Achtsamkeit und Bildung.";
+---
+
+<BaseLayout
+  title="Befreundete Projekte"
+  description={description}
+  bodyClass="theme--projects"
+>
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Netzwerk</span>
+      <h1>Befreundete Projekte</h1>
+      <p>
+        Ausgewählte Initiativen, die Achtsamkeit in Bildung, Gesundheit und
+        Gesellschaft stärken.
+      </p>
+    </div>
+  </header>
+
+  <Section title="Projekt im Fokus" intro="Kuratiert und für dich eingeordnet.">
+    <div class="card-grid">
+      <Card
+        title="ABiK – Achtsamkeit in der Bildung und Hoch-/Schulkultur"
+        meta="Universität Leipzig · Zentrum für Lehrer:innenbildung und Schulforschung"
+      >
+        <p>
+          Das Projekt verbindet Forschung, Praxis und Fortbildung rund um
+          Achtsamkeit in Bildungskontexten. Ziel ist es, Achtsamkeit nachhaltig in
+          Schule, Hochschule und Lehrkräftebildung zu verankern.
+        </p>
+        <a
+          class="button button--outline"
+          href="https://www.zls.uni-leipzig.de/forschung-und-projekte/abik"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Zur Projektseite
+        </a>
+      </Card>
+      <Card
+        title="AVE Institut – Achtsamkeit, Verbundenheit und Engagement"
+        meta="Gemeinnützige Organisation · Bildung für innere Entwicklung"
+      >
+        <p>
+          Das AVE Institut bietet Angebote von Achtsamkeit bis Zuversicht, fördert
+          Netzwerke und Weiterbildungen und stellt vielfältige Lernformate bereit.
+        </p>
+        <a
+          class="button button--outline"
+          href="https://ave-institut.de"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Zur Projektseite
+        </a>
+      </Card>
+    </div>
+    <p class="section-note">
+      Die Auswahl dient der Orientierung. Inhalte liegen bei den jeweiligen
+      Projekten.
+    </p>
+  </Section>
+
+  <Section className="section--cta">
+    <div class="cta-banner">
+      <div>
+        <h3>Du möchtest ein Projekt ergänzen?</h3>
+        <p>Schreib mir gern, wenn es eine Initiative gibt, die hier passen würde.</p>
+      </div>
+      <a class="button" href="/kontakt">Kontakt aufnehmen</a>
+    </div>
+  </Section>
+</BaseLayout>

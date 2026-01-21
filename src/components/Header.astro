@@ -1,0 +1,164 @@
+---
+const navItems = [
+  { href: "/", label: "Übersicht" },
+  {
+    href: "/achtsamkeitstrainingmbsr",
+    label: "Angebote",
+    children: [
+      { href: "/achtsamkeitstrainingmbsr", label: "Mehr zu MBSR" },
+      { href: "/workshopsundvortraege", label: "Workshops & Vorträge" },
+      { href: "/yogaundmehr", label: "(Acro)Yoga & mehr" },
+      { href: "/befreundeteprojekte", label: "Befreundete Projekte" }
+    ]
+  },
+  { href: "/chris", label: "Chris" },
+  { href: "/kontakt", label: "Kontakt" }
+];
+
+const { pathname } = Astro.url;
+const isLinkActive = (href) => pathname === href;
+const isItemActive = (item) =>
+  isLinkActive(item.href) ||
+  (item.children ? item.children.some((child) => isLinkActive(child.href)) : false);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-title" href="/" aria-label="Dr. Christian Hahn · Achtsamkeitstraining">
+      <span class="site-title__name">Dr. Christian Hahn</span>
+      <span class="site-title__divider" aria-hidden="true">·</span>
+      <span class="site-title__tagline">Achtsamkeitstraining</span>
+    </a>
+    <button
+      class="nav-menu-toggle"
+      type="button"
+      aria-label="Navigation öffnen"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      data-nav-menu-toggle
+    >
+      <span class="nav-menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+    <nav class="nav nav--underline" id="site-nav" aria-label="Hauptnavigation" data-nav-panel>
+      <ul class="nav-list nav-list--dots">
+        {navItems.map((item) => (
+          <li
+            class={`nav-item${item.children ? " nav-item--has-children" : ""}${
+              isItemActive(item) ? " is-active" : ""
+            }`}
+          >
+            {item.children ? (
+              <>
+                <div class="nav-item-row">
+                  <a class={`nav-link${isItemActive(item) ? " is-active" : ""}`} href={item.href}>
+                    {item.label}
+                  </a>
+                  <button
+                    class="nav-link nav-button nav-toggle"
+                    type="button"
+                    aria-label={`${item.label} öffnen`}
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-nav-toggle
+                  >
+                    <span class="nav-caret" aria-hidden="true">
+                      ▾
+                    </span>
+                  </button>
+                </div>
+                <ul class="nav-submenu">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        class={`nav-link nav-link--sub${isLinkActive(child.href) ? " is-active" : ""}`}
+                        href={child.href}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a class={`nav-link${isItemActive(item) ? " is-active" : ""}`} href={item.href}>
+                {item.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <div class="nav-scrim" aria-hidden="true" data-nav-scrim></div>
+</header>
+
+<script is:inline>
+  const menuToggle = document.querySelector("[data-nav-menu-toggle]");
+  const navScrim = document.querySelector("[data-nav-scrim]");
+
+  const openMenu = () => {
+    document.body.classList.add("nav-open");
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "Navigation schließen");
+    }
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("nav-open");
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Navigation öffnen");
+    }
+  };
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = document.body.classList.contains("nav-open");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  if (navScrim) {
+    navScrim.addEventListener("click", closeMenu);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.body.classList.contains("nav-open")) {
+      closeMenu();
+    }
+  });
+
+  document.querySelectorAll(".nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (document.body.classList.contains("nav-open")) {
+        closeMenu();
+      }
+    });
+  });
+
+  const navButtons = document.querySelectorAll(".nav-item--has-children .nav-button");
+  navButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const item = button.closest(".nav-item--has-children");
+      if (!item) return;
+      const isOpen = item.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".nav-item--has-children")) return;
+    document.querySelectorAll(".nav-item--has-children.is-open").forEach((item) => {
+      item.classList.remove("is-open");
+      const button = item.querySelector(".nav-button");
+      if (button) {
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+</script>
