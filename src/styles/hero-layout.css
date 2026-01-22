@@ -1,0 +1,29 @@
+.quote-with-image {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .quote-with-image {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+  }
+}
+
+.quote-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .quote-image-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+.quote-image-wrapper img {
+  display: block;
+  max-width: 100%;
+}

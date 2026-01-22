@@ -5,6 +5,8 @@ import Card from "../components/Card.astro";
 import courses from "../data/courses.json";
 import offers from "../data/offers.json";
 import testimonials from "../data/testimonials.json";
+import { Image } from 'astro:assets';
+import meinBild from '../assets/ini_med.jpeg';
 
 const description = "Mindful Practice · Achtsamkeitstraining in Leipzig.";
 const offerTeasers = offers.slice(0, 2);
@@ -66,7 +68,20 @@ const seatSlots =
     eyebrow="Zitat"
     className="section--compact"
   >
-    <figure class="quote-block">
+    <div class="quote-with-image">
+      <div class="quote-image-wrapper">
+        <Image 
+          src={meinBild} 
+          alt="Meditation" 
+          width={500}
+          height={333}
+          format="webp"
+          quality={85}
+          loading="lazy"
+          style="width: 100%; height: auto; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; box-shadow: 0 15px 35px -10px rgba(30, 142, 163, 0.25);" 
+        />
+      </div>
+      <figure class="quote-block">
       <blockquote>
         „Das Vermögen, eine wandernde Aufmerksamkeit willentlich zurückzubringen,
         wieder und immer wieder, ist die eigentliche Wurzel von Urteilskraft,
@@ -75,7 +90,8 @@ const seatSlots =
         Erziehung par excellence.“
       </blockquote>
       <figcaption>William James · Die Prinzipien der Psychologie (1890)</figcaption>
-    </figure>
+      </figure>
+    </div>
   </Section>
 
   <Section
