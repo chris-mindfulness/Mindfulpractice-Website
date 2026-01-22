@@ -6,7 +6,7 @@ const navItems = [
     label: "Angebote",
     children: [
       { href: "/achtsamkeitstrainingmbsr", label: "Mehr zu MBSR" },
-      { href: "/workshopsundvortraege", label: "Workshops & Vorträge" },
+  { href: "/workshopsundvortraege", label: "Workshops & Vorträge" },
       { href: "/yogaundmehr", label: "(Acro)Yoga & mehr" },
       { href: "/befreundeteprojekte", label: "Befreundete Projekte" }
     ]
@@ -41,7 +41,7 @@ const isItemActive = (item) =>
     </button>
     <nav class="nav nav--underline" id="site-nav" aria-label="Hauptnavigation" data-nav-panel>
       <ul class="nav-list nav-list--dots">
-        {navItems.map((item) => (
+      {navItems.map((item) => (
           <li
             class={`nav-item${item.children ? " nav-item--has-children" : ""}${
               isItemActive(item) ? " is-active" : ""
