@@ -1,22 +1,76 @@
 Inhalte pflegen (Texte und Daten)
+==================================
 
-Seiten (reine Texte):
-- src/pages/index.astro
-- src/pages/achtsamkeitstrainingmbsr.astro
-- src/pages/workshopsundvortraege.astro
-- src/pages/kontakt.astro
-- src/pages/chris.astro
+1. KURSDATEN AENDERN
+--------------------
 
-Kurse und Daten:
-- src/data/courses.json  (z.B. Termine, Orte, freie Plaetze)
-- src/data/offers.json   (weitere Angebote)
-- src/data/testimonials.json (Stimmen)
+Datei: src/data/courses.json
 
-Vorgehen:
+Diese Datei enthaelt die Informationen zu deinen MBSR-Kursen.
+Wenn du einen neuen Kurs ankuendigst, aenderst du einfach diese Werte:
+
+Feld         | Bedeutung                       | Beispiel
+-------------|--------------------------------|----------------------------------------
+title        | Kurstitel                       | "MBSR 8-Wochen-Kurs"
+startDate    | Startdatum (Format: JJJJ-MM-TT) | "2026-04-14"
+endDate      | Enddatum                        | "2026-06-02"
+schedule     | Wochentag und Uhrzeit           | "Dienstags, 18:30-21:00"
+location     | Adresse                         | "Nikolaistrasse 33-37, 04109 Leipzig"
+locationName | Name des Ortes (optional)       | "Be Light Yogastudio"
+locationUrl  | Link zum Ort (optional)         | "https://belight-leipzig.de"
+maxSeats     | Maximale Teilnehmerzahl         | 14
+freeSeats    | Noch verfuegbare Plaetze        | 7
+
+WICHTIG: Das Datumsformat muss immer JJJJ-MM-TT sein (z.B. 2026-04-14)
+
+Diese Daten werden automatisch auf der Startseite angezeigt,
+inklusive der Platz-Visualisierung.
+
+
+2. SEITENINHALTE AENDERN
+------------------------
+
+Ordner: src/pages/
+
+Jede .astro-Datei entspricht einer Seite auf deiner Website:
+
+Datei                          | URL                                         | Inhalt
+-------------------------------|---------------------------------------------|------------------
+index.astro                    | mindfulpractice.de/                         | Startseite
+achtsamkeitstrainingmbsr.astro | mindfulpractice.de/achtsamkeitstrainingmbsr | MBSR-Kurs Details
+workshopsundvortraege.astro    | mindfulpractice.de/workshopsundvortraege    | Workshops
+yogaundmehr.astro              | mindfulpractice.de/yogaundmehr              | Yoga-Angebote
+chris.astro                    | mindfulpractice.de/chris                    | Ueber dich
+kontakt.astro                  | mindfulpractice.de/kontakt                  | Kontaktseite
+datenschutz.astro              | mindfulpractice.de/datenschutz              | Datenschutz
+impressum.astro                | mindfulpractice.de/impressum                | Impressum
+
+Wenn du Text auf einer Seite aendern willst, oeffnest du die entsprechende
+.astro-Datei und bearbeitest den HTML-aehnlichen Inhalt darin.
+
+
+3. WEITERE DATEN-DATEIEN
+------------------------
+
+src/data/offers.json       - Weitere Angebote (Workshops, Yoga)
+src/data/testimonials.json - Stimmen/Feedbacks von Teilnehmern
+
+
+4. VORGEHEN
+-----------
+
 1) Datei oeffnen
 2) Text oder Wert ersetzen
 3) Datei speichern
 4) Lokal ansehen (npm run dev)
+5) Bei Zufriedenheit: committen und pushen
 
-Hinweis:
-- Aendere nur die Inhalte, nicht die Struktur.
+Hinweis: Aendere nur die Inhalte, nicht die Struktur.
+
+
+5. NEUE SEITE HINZUFUEGEN
+-------------------------
+
+1) Erstelle eine neue .astro-Datei im Ordner src/pages/
+2) Der Dateiname wird zur URL (z.B. neueseite.astro -> mindfulpractice.de/neueseite)
+3) Kopiere die Grundstruktur von einer bestehenden Seite als Vorlage
