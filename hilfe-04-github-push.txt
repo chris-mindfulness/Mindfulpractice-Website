@@ -1,19 +1,23 @@
-GitHub: Aenderungen hochladen (einfach)
-
-1) Im Terminal in den Projektordner:
-   cd /Users/ch70bure/Privat/mbsr-astro
-
-2) Status ansehen:
-   git status
-
-3) Alle Aenderungen hinzufuegen:
-   git add .
-
-4) Commit erstellen:
-   git commit -m "Update Inhalte"
-
-5) Hochladen:
-   git push
+GitHub: Änderungen hochladen (empfohlen & sicher)
+	
+   1.	Im Terminal in den Projektordner:
+cd /Users/ch70bure/Privat/mbsr-astro
+	
+   2.	Status ansehen:
+git status
+	
+   3.	Änderungen hinzufügen (nur Website-Dateien):
+git add src public
+(optional, wenn sich Konfiguration geändert hat:)
+git add package.json package-lock.json astro.config.mjs
+	
+   4.	Commit erstellen:
+git commit -m “Update Inhalte”
+	
+   5.	Hochladen (Deploy):
+git push
 
 Tipp:
-- Wenn git fragt, ob du eine Nachricht eingeben willst: einfach speichern.
+	•	Nach dem Push startet Cloudflare automatisch den Build und die Seite ist nach 1–2 Minuten live.
+	•	Du musst keinen extra Deploy-Befehl ausführen.
+	•	Dateien wie .DS_Store nicht hinzufügen (sie gehören nicht zur Website).
